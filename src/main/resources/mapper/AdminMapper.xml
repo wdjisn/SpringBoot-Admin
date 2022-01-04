@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.spba.api.mapper.AdminMapper">
+
+    <select id="getInfo" parameterType="HashMap" resultType="HashMap">
+        SELECT a.id,a.username,a.password,a.safe,a.status,a.role,
+        ( SELECT sum(root) FROM role WHERE JSON_CONTAINS ( a.role, CONVERT ( id, CHAR ) ) ) AS root
+        FROM admin a
+        <where>
+            <if test="id != null">AND a.id = #{id}</if>
+            <if test="username != null and username != ''">AND username = #{username}</if>
+        </where>
+        limit 1
+    </select>
+
+    <select id="getList" parameterType="HashMap" resultType="HashMap">
+        SELECT a.id,a.username,a.status,a.login_time,a.login_ip,
+        ( SELECT count(*) FROM login_log WHERE a.id = admin_id) AS login_count,
+        ( SELECT sum(root) FROM role WHERE JSON_CONTAINS ( a.role, CONVERT ( id, CHAR ) ) ) AS root,
+        ( SELECT GROUP_CONCAT( NAME SEPARATOR " | " ) FROM role WHERE JSON_CONTAINS ( a.role, CONVERT ( id, CHAR ) ) ) AS roles
+        FROM admin a
+        <where>
+            <if test="params.username != null and params.username != ''">AND a.username LIKE "%${params.username}%"</if>
+            <if test="params.status != null">AND a.status = #{params.status}</if>
+            <if test="params.role != null">
+                AND JSON_CONTAINS ( a.role, CONVERT ( #{params.role}, CHAR ) )
+            </if>
+        </where>
+    </select>
+
+    <select id="getRoleAdminAll" parameterType="Integer" resultType="HashMap">
+        SELECT id FROM admin WHERE JSON_CONTAINS( role, CONVERT(#{roleId}, CHAR))
+    </select>
+
+</mapper>

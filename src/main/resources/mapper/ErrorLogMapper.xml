@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.spba.api.mapper.ErrorLogMapper">
+
+    <select id="getList" parameterType="HashMap" resultType="HashMap">
+        SELECT * FROM error_log
+        <where>
+            <if test="params.start != null and params.start != '' and params.end != null and params.end != ''">
+                AND create_time between #{params.start} and #{params.end}
+            </if>
+        </where>
+        ORDER BY id DESC
+    </select>
+
+</mapper>

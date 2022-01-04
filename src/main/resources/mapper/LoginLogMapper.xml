@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.spba.api.mapper.LoginLogMapper">
+
+    <select id="getList" parameterType="HashMap" resultType="HashMap">
+        SELECT ll.id,ll.login_ip,ll.create_time,a.username,
+        ( SELECT GROUP_CONCAT( NAME SEPARATOR " | " ) FROM role WHERE JSON_CONTAINS ( a.role, CONVERT ( id, CHAR ) ) ) AS roles
+        FROM login_log as ll
+        LEFT JOIN admin as a on ll.admin_id = a.id
+        <where>
+            <if test="params.username != null and params.username != ''">AND a.username LIKE "%${params.username}%"</if>
+            <if test="params.start != null and params.start != '' and params.end != null and params.end != ''">
+            AND ll.create_time between #{params.start} and #{params.end}
+            </if>
+        </where>
+        ORDER BY ll.id DESC
+    </select>
+
+</mapper>
