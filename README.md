@@ -17,6 +17,7 @@
 - 使用maven引入依赖
 - 将spba.sql文件导入数据库
 - 修改application-dev.yml文件中mysql、redis配置项
+- 获取客户端真实ip地址，需要配置nginx
 	
 	
 ## 目录结构
