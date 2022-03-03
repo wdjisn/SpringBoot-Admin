@@ -52,5 +52,11 @@
 - https://github.com/wdjisn/SpringBoot-Vue.git
 
 
+## 在线体验
+- http://spba.baobaonames.cn/#/login
+- 账号：style
+- 密码：admin123
+
+
 ## 疑问解答
 - 微信：wdjisn
