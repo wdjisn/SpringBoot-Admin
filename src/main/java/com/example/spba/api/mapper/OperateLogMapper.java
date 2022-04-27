@@ -9,5 +9,5 @@ import java.util.HashMap;
 
 public interface OperateLogMapper extends BaseMapper<OperateLog>
 {
-    public Page<HashMap> getList(Page page, @Param("params") HashMap params);
+    Page<HashMap> getList(Page page, @Param("params") HashMap params);
 }

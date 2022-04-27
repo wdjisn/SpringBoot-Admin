@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface MenuMapper extends BaseMapper<Menu>
 {
-    public List<HashMap> getAll(HashMap params);
+    List<HashMap> getAll(HashMap params);
 }

@@ -9,5 +9,5 @@ import java.util.HashMap;
 
 public interface LoginLogMapper extends BaseMapper<LoginLog>
 {
-    public Page<HashMap> getList(Page page, @Param("params") HashMap params);
+    Page<HashMap> getList(Page page, @Param("params") HashMap params);
 }

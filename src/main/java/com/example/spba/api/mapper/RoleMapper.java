@@ -10,6 +10,6 @@ import java.util.List;
 
 public interface RoleMapper extends BaseMapper<Role>
 {
-    public List<Role> getAll(HashMap parame);
-    public Page<HashMap> getList(Page page, @Param("params") HashMap params);
+    List<Role> getAll(HashMap params);
+    Page<HashMap> getList(Page page, @Param("params") HashMap params);
 }
