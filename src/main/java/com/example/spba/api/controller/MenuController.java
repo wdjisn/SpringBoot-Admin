@@ -1,7 +1,7 @@
 package com.example.spba.api.controller;
 
-import com.example.spba.api.domain.Menu;
-import com.example.spba.api.dto.MenuDTO;
+import com.example.spba.api.domain.entity.Menu;
+import com.example.spba.api.domain.dto.MenuDTO;
 import com.example.spba.api.service.MenuService;
 import com.example.spba.api.utils.Function;
 import com.example.spba.api.utils.R;

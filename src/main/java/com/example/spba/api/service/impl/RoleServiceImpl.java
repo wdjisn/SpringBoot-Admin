@@ -2,8 +2,8 @@ package com.example.spba.api.service.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.spba.api.domain.Role;
-import com.example.spba.api.mapper.RoleMapper;
+import com.example.spba.api.domain.entity.Role;
+import com.example.spba.api.dao.RoleMapper;
 import com.example.spba.api.service.RoleService;
 import com.example.spba.api.utils.Function;
 import org.springframework.stereotype.Service;

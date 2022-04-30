@@ -2,7 +2,7 @@ package com.example.spba.api.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.spba.api.domain.OperateLog;
+import com.example.spba.api.domain.entity.OperateLog;
 
 import java.util.HashMap;
 

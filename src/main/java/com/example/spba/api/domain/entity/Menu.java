@@ -1,4 +1,4 @@
-package com.example.spba.api.domain;
+package com.example.spba.api.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -10,21 +10,20 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class Admin implements Serializable
+public class Menu implements Serializable
 {
-    // 将光标放到类名上，按atl＋enter键
-    private static final long serialVersionUID = -2643105155807511497L;
+    private static final long serialVersionUID = -1960792688824719647L;
 
     @TableId(type = IdType.AUTO)
     private Long id;
-    private String username;
-    private String password;
-    private String role;
-    private String avatar;
+    private String name;
+    private Integer parent_id;
+    private String type;
+    private String path;
+    private String perms;
+    private String icon;
+    private Integer sort;
     private Integer status;
-    private String safe;
-    private String login_ip;
-    private Date login_time;
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Date update_time;
     @TableField(fill = FieldFill.INSERT)

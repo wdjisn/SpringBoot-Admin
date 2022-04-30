@@ -1,4 +1,4 @@
-package com.example.spba.api.dto;
+package com.example.spba.api.domain.dto;
 
 import lombok.Data;
 

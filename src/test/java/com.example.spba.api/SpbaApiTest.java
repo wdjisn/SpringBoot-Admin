@@ -1,6 +1,6 @@
 package com.example.spba.api;
 
-import com.example.spba.api.domain.Admin;
+import com.example.spba.api.domain.entity.Admin;
 import com.example.spba.api.utils.RedisUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,9 +2,9 @@ package com.example.spba.api.service.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.spba.api.domain.Admin;
-import com.example.spba.api.domain.OperateLog;
-import com.example.spba.api.mapper.OperateLogMapper;
+import com.example.spba.api.domain.entity.Admin;
+import com.example.spba.api.domain.entity.OperateLog;
+import com.example.spba.api.dao.OperateLogMapper;
 import com.example.spba.api.service.AdminService;
 import com.example.spba.api.service.OperateLogService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,8 @@
 package com.example.spba.api.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.spba.api.domain.Menu;
-import com.example.spba.api.mapper.MenuMapper;
+import com.example.spba.api.domain.entity.Menu;
+import com.example.spba.api.dao.MenuMapper;
 import com.example.spba.api.service.MenuService;
 import org.springframework.stereotype.Service;
 

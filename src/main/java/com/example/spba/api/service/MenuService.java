@@ -1,7 +1,7 @@
 package com.example.spba.api.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.spba.api.domain.Menu;
+import com.example.spba.api.domain.entity.Menu;
 
 import java.util.HashMap;
 import java.util.List;

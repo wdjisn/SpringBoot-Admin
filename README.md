@@ -28,15 +28,15 @@
 |
 ├── controller 控制器
 |
-├── domain 数据实体类
-|
-|── dto 数据传输对象
+|── dao 数据访问层
+
+├── domain 实体类
+│   ├── dto 数据传输对象
+│   ├── entity 数据表对应实体
 |
 ├── exception 异常处理
 |
 ├── interceptor 拦截器
-|
-├── mapper 数据访问层
 |
 ├── service 数据服务接口层
 │   ├── impl 数据服务接口实现层

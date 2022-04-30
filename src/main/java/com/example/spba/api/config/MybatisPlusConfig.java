@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan("com.example.spba.api.mapper") // 指定要扫描的Mapper类的包的路径
 public class MybatisPlusConfig
 {
 

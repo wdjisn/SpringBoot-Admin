@@ -2,8 +2,8 @@ package com.example.spba.api.service.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.spba.api.domain.LoginLog;
-import com.example.spba.api.mapper.LoginLogMapper;
+import com.example.spba.api.domain.entity.LoginLog;
+import com.example.spba.api.dao.LoginLogMapper;
 import com.example.spba.api.service.LoginLogService;
 import org.springframework.stereotype.Service;
 

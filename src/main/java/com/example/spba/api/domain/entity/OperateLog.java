@@ -1,4 +1,4 @@
-package com.example.spba.api.domain;
+package com.example.spba.api.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -10,17 +10,18 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class ErrorLog implements Serializable
+public class OperateLog implements Serializable
 {
-    private static final long serialVersionUID = -6272565739196329042L;
+    private static final long serialVersionUID = -5545102653652956328L;
 
     @TableId(type = IdType.AUTO)
     private Long id;
+    private Integer admin_id;
+    private String username;
     private String url;
     private String method;
     private String params;
-    private String message;
-    private String exception;
+    private String ip;
     @TableField(fill = FieldFill.INSERT)
     private Date create_time;
 }
