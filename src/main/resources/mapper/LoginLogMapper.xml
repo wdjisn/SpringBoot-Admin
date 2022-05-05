@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.spba.api.dao.LoginLogMapper">
+<mapper namespace="com.example.spba.dao.LoginLogMapper">
 
     <select id="getList" parameterType="HashMap" resultType="HashMap">
         SELECT ll.id,ll.login_ip,ll.create_time,a.username,
