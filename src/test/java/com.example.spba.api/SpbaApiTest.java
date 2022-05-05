@@ -1,13 +1,18 @@
 package com.example.spba.api;
 
+import cn.hutool.core.date.DateUtil;
 import com.example.spba.api.domain.entity.Admin;
+import com.example.spba.api.domain.es.EsBlog;
+import com.example.spba.api.service.EsBlogService;
 import com.example.spba.api.utils.RedisUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -18,6 +23,9 @@ public class SpbaApiTest
 
     @Autowired
     private RedisUtil redisUtil;
+
+    @Autowired
+    private EsBlogService esBlogService;
 
     /**
      * test
@@ -86,5 +94,76 @@ public class SpbaApiTest
 
         // 加入该代码，让主线程不挂掉
         System.in.read();
+    }
+
+
+
+
+    // ==============================Elasticsearch测试方法==============================
+
+
+
+    /**
+     * es新增数据
+     */
+    @Test
+    public void esBlogSave()
+    {
+        Date date = DateUtil.parse(DateUtil.now());
+
+        EsBlog blog = new EsBlog();
+        blog.setId(1L);
+        blog.setTitle("Springboot为什么这么优秀");
+        blog.setAuthor("wdjisn");
+        blog.setContent("就是这么优秀");
+        blog.setUpdateTime(date);
+        blog.setCreateTime(date);
+        EsBlog res = esBlogService.save(blog);
+
+        System.out.println("es新增数据： " + res);
+    }
+
+    /**
+     * es查询所有数据
+     */
+    @Test
+    public void esBlogFindAll()
+    {
+        System.out.println("es查询所有数据，总数量：" + esBlogService.count());
+
+        List<EsBlog> list = new ArrayList<>();
+        Iterable<EsBlog> iterable = esBlogService.findAll();
+        iterable.forEach(e->list.add((e)));
+
+        list.forEach(e->System.out.println(e));
+    }
+
+    /**
+     * es分页查询
+     */
+    @Test
+    public void esBlogFindList()
+    {
+        esBlogService.findList("Springboot", 1, 15);
+    }
+
+    /**
+     * es根据title查询
+     */
+    @Test
+    public void esBlogFindByTitle()
+    {
+        List<EsBlog> list = esBlogService.findByTitle("Springboot为什么这么优秀");
+        list.forEach(e->System.out.println(e));
+    }
+
+    /**
+     * es根据title或content查询
+     */
+    @Test
+    public void esBlogFindByTitleOrContent()
+    {
+        List<EsBlog> list = esBlogService.findByTitleOrContent("Springboot", "Docker");
+        list.forEach(e->System.out.println(e));
     }
 }

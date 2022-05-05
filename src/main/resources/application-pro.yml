@@ -61,6 +61,10 @@ spring:
         max-idle: 8
         # 连接池最大阻塞等待时间（使用负值表示没有限制）
         max-wait: -1ms
+  # elasticsearch配置
+  elasticsearch:
+    rest:
+      uris: 127.0.0.1:9200
 
 # mybatis-plus配置
 mybatis-plus:

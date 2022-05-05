@@ -1,5 +1,5 @@
 ## SpringBoot-Admin 简称 spba
-基于SpringBoot、Vue开发的通用后台管理系统，做到开箱即用，为新项目开发省去了基础功能开发的步骤。此系统主要包含：登录、注销、可视化数据大屏、管理员、角色管理、菜单管理、权限管理、错误日志、登录日志、操作日志、七牛云上传等功能。后端主要使用MySQL、MyBatis-Plus、Redis、Sa-Token权限认证框架、validation、七牛云等技术。拥有多线程配置类、定时任务、异步任务等示例。
+基于SpringBoot、Vue开发的通用后台管理系统，做到开箱即用，为新项目开发省去了基础功能开发的步骤。此系统主要包含：登录、注销、可视化数据大屏、管理员、角色管理、菜单管理、权限管理、错误日志、登录日志、操作日志、七牛云上传等功能。后端主要使用MySQL、MyBatis-Plus、Redis、Sa-Token权限认证框架、validation、七牛云、Elasticsearch等技术。拥有多线程配置类、定时任务、异步任务等示例。
 
 
 ## 项目截图
@@ -32,7 +32,8 @@
 
 ├── domain 实体类
 │   ├── dto 数据传输对象
-│   ├── entity 数据表对应实体
+│   ├── entity 数据表实体类
+│   ├── es elasticsearch实体类
 |
 ├── exception 异常处理
 |
