@@ -4,7 +4,7 @@ import cn.dev33.satoken.exception.NotLoginException;
 import cn.dev33.satoken.exception.NotPermissionException;
 import cn.dev33.satoken.exception.NotRoleException;
 import cn.hutool.json.JSONUtil;
-import com.example.spba.service.ErrorLogService;
+import com.example.spba.utils.AsyncTask;
 import com.example.spba.utils.R;
 import org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException;
 import org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException;
@@ -31,7 +31,7 @@ public class GraceExceptionHandler
 {
 
     @Autowired
-    private ErrorLogService errorLogService;
+    private AsyncTask asyncTask;
 
 
     /*************************SpringBoot常见异常*************************/
@@ -93,7 +93,7 @@ public class GraceExceptionHandler
     @ExceptionHandler({Exception.class})
     public R exceptionHandler(Exception e, HttpServletRequest request)
     {
-        errorLogService.save(request.getRequestURI(), request.getMethod(),
+        asyncTask.saveErrorLog(request.getRequestURI(), request.getMethod(),
                              JSONUtil.parse(request.getParameterMap()).toBean(String.class),
                              e.getMessage(), e.getClass().toString());
         return R.error();
@@ -112,8 +112,8 @@ public class GraceExceptionHandler
      */
     @ExceptionHandler({NotLoginException.class})
     public R notLoginExceptionHandler(NotLoginException e) {
-        System.out.println(e.toString());
-        System.out.println(e.getType());
+        // System.out.println(e.toString());
+        // System.out.println(e.getType());
         // -3 Token已过期：55c23394-d97d-4157-9db2-a6410633b05e
         // -2 Token无效：4eaec3ca-db5d-4d94-b911-42afd247db57
         return R.error(501, "请登录");

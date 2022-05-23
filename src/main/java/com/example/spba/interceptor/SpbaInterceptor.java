@@ -3,7 +3,7 @@ package com.example.spba.interceptor;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.extra.servlet.ServletUtil;
 import cn.hutool.json.JSONUtil;
-import com.example.spba.service.OperateLogService;
+import com.example.spba.utils.AsyncTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,7 +15,7 @@ public class SpbaInterceptor implements HandlerInterceptor
 {
 
     @Autowired
-    private OperateLogService operateLogService;
+    private AsyncTask asyncTask;
 
     /**
      * 拦截请求，访问Controller之前使用的方法
@@ -43,7 +43,7 @@ public class SpbaInterceptor implements HandlerInterceptor
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         // System.out.println("访问到Controller之后，渲染视图之前");
         if (!request.getMethod().equals("GET")) {
-            operateLogService.save(StpUtil.getLoginIdAsLong(), request.getRequestURI(), request.getMethod(),
+            asyncTask.saveOperateLog(StpUtil.getLoginIdAsLong(), request.getRequestURI(), request.getMethod(),
                                    JSONUtil.parse(request.getParameterMap()).toBean(String.class),
                                    ServletUtil.getClientIP(request));
         }
