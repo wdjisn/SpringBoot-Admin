@@ -16,7 +16,7 @@ public interface EsBlogRepository extends ElasticsearchRepository<EsBlog, Long>
      * @param title
      * @return
      */
-    List<EsBlog> findByTitle(String title);
+    public List<EsBlog> findByTitle(String title);
 
     /**
      * OR 语句查询
@@ -24,5 +24,5 @@ public interface EsBlogRepository extends ElasticsearchRepository<EsBlog, Long>
      * @param content
      * @return
      */
-    List<EsBlog> findByTitleOrContent(String title, String content);
+    public List<EsBlog> findByTitleOrContent(String title, String content);
 }

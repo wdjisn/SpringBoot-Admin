@@ -73,7 +73,8 @@ mybatis-plus:
   type-aliases-package: com.example.spba.domain.entity
   configuration:
     # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
-    map-underscore-to-camel-case: false
+    map-underscore-to-camel-case: true
+    object-wrapper-factory: com.baomidou.mybatisplus.extension.MybatisMapWrapperFactory
 
 #logging:
 #  config: classpath:log.xml

@@ -15,7 +15,7 @@ public interface AdminService extends IService<Admin>
      * @param params
      * @return
      */
-    HashMap checkLogin(HashMap params);
+    public HashMap checkLogin(HashMap params);
 
     /**
      * 获取管理员列表（分页）
@@ -23,26 +23,26 @@ public interface AdminService extends IService<Admin>
      * @param params
      * @return
      */
-    Page<HashMap> getList(Page page, HashMap params);
+    public Page<HashMap> getList(Page page, HashMap params);
 
     /**
      * 根据条件获取详情
      * @param params
      * @return
      */
-    HashMap getInfo(HashMap params);
+    public HashMap getInfo(HashMap params);
 
     /**
      * 获取拥有某角色的管理员列表
      * @param roleId
      * @return
      */
-    List<HashMap> getRoleAdminAll(Integer roleId);
+    public List<HashMap> getRoleAdminAll(Integer roleId);
 
     /**
      * 获取管理员的权限列表
      * @param adminId
      * @return
      */
-    List<HashMap> getPermissionList(Integer adminId);
+    public List<HashMap> getPermissionList(Integer adminId);
  }

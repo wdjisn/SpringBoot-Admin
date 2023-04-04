@@ -13,21 +13,27 @@ import java.util.Date;
 @Document(indexName = "blog", useServerConfiguration = true, createIndex = false)
 public class EsBlog implements Serializable
 {
+    /** ID */
     @Id
     private Long id;
 
+    /** 标题 */
     @Field(type = FieldType.Text, analyzer = "id_max_word")
     private String title;
 
+    /** 作者 */
     @Field(type = FieldType.Text)
     private String author;
 
+    /** 内容 */
     @Field(type = FieldType.Text, analyzer = "id_max_word")
     private String content;
 
+    /** 更新时间 */
     @Field(type = FieldType.Date, pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
 
+    /** 创建时间 */
     @Field(type = FieldType.Date, pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 }

@@ -18,7 +18,7 @@ public class RoleDTO
     private String name;
 
     @NotBlank(message = "请选择角色权限", groups = {RoleDTO.Save.class, RoleDTO.Update.class})
-    private String menu_ids;
+    private String menuIds;
 
     private Integer status;
 

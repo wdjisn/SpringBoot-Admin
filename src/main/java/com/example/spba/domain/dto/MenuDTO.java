@@ -19,7 +19,7 @@ public class MenuDTO
 
     @NotNull(message = "请选择父级", groups = {MenuDTO.Save.class, MenuDTO.Update.class})
     @Min(value = 0, message = "请选择父级", groups = {MenuDTO.Save.class, MenuDTO.Update.class})
-    private Integer parent_id;
+    private Integer parentId;
 
     @NotBlank(message = "请选择类型", groups = {MenuDTO.Save.class, MenuDTO.Update.class})
     private String type;

@@ -60,7 +60,7 @@ public class CommonController
     public HashMap getQiniuToken()
     {
         HashMap data = new HashMap<>();
-        data.put("uptoken", QiniuUtil.getToken());
+        data.put("upToken", QiniuUtil.getToken());
 
         return data;
     }

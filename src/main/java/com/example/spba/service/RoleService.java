@@ -16,19 +16,19 @@ public interface RoleService extends IService<Role>
      * @param params
      * @return
      */
-    Page<HashMap> getList(Page page, HashMap params);
+    public Page<HashMap> getList(Page page, HashMap params);
 
     /**
      * 验证角色
      * @param role
      * @return
      */
-    Boolean checkRole(String role);
+    public Boolean checkRole(String role);
 
     /**
      * 获取角色列表
      * @param params
      * @return
      */
-    List<Role> getAll(HashMap params);
+    public List<Role> getAll(HashMap params);
 }

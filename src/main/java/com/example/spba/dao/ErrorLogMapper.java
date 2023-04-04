@@ -11,5 +11,5 @@ import java.util.HashMap;
 @Mapper
 public interface ErrorLogMapper extends BaseMapper<ErrorLog>
 {
-    Page<HashMap> getList(Page page, @Param("params") HashMap params);
+    public Page<HashMap> getList(Page page, @Param("params") HashMap params);
 }

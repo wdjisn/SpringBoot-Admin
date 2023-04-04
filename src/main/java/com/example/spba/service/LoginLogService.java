@@ -15,5 +15,5 @@ public interface LoginLogService extends IService<LoginLog>
      * @param params
      * @return
      */
-    Page<HashMap> getList(Page page, HashMap params);
+    public Page<HashMap> getList(Page page, HashMap params);
 }

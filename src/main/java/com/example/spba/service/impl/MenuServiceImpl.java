@@ -14,8 +14,8 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements Me
 {
 
     @Override
-    public List<HashMap> getAll(HashMap parame) {
-        return this.baseMapper.getAll(parame);
+    public List<HashMap> getAll(HashMap params) {
+        return this.baseMapper.getAll(params);
     }
 
     @Override

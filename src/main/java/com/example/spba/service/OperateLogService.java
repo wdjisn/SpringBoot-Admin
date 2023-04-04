@@ -11,13 +11,13 @@ public interface OperateLogService extends IService<OperateLog>
 
     /**
      * 保存操作日志
-     * @param admin_id
+     * @param adminId
      * @param url
      * @param method
      * @param params
      * @param ip
      */
-    void save(Long admin_id, String url, String method, String params, String ip);
+    public void save(Long adminId, String url, String method, String params, String ip);
 
     /**
      * 获取操作日志列表（分页）
@@ -25,5 +25,5 @@ public interface OperateLogService extends IService<OperateLog>
      * @param params
      * @return
      */
-    Page<HashMap> getList(Page page, HashMap params);
+    public Page<HashMap> getList(Page page, HashMap params);
 }

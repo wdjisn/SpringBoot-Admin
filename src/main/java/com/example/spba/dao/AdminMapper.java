@@ -12,7 +12,7 @@ import java.util.List;
 @Mapper
 public interface AdminMapper extends BaseMapper<Admin>
 {
-    Page<HashMap> getList(Page page, @Param("params") HashMap params);
-    HashMap getInfo(HashMap params);
-    List<HashMap> getRoleAdminAll(Integer roleId);
+    public Page<HashMap> getList(Page page, @Param("params") HashMap params);
+    public HashMap getInfo(HashMap params);
+    public List<HashMap> getRoleAdminAll(Integer roleId);
 }

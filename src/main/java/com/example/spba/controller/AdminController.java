@@ -91,7 +91,7 @@ public class AdminController
     public R addAdmin(@Validated(AdminDTO.Save.class) AdminDTO form)
     {
         // 验证角色（不允许添加超管，超管是默认生成的，唯一）
-        Boolean res = roleService.checkRole(form.getRole_ids());
+        Boolean res = roleService.checkRole(form.getRoleIds());
         if (res.equals(false)) {
             return R.error();
         }
@@ -107,7 +107,7 @@ public class AdminController
         BeanUtils.copyProperties(form, admin);
         admin.setSafe(Function.getRandomString(4));
         admin.setPassword(DigestUtils.md5DigestAsHex((form.getPassword() + admin.getSafe()).getBytes()));
-        admin.setRole(JSONUtil.parse(Function.strToIntArr(form.getRole_ids(), ",")).toString());
+        admin.setRole(JSONUtil.parse(Function.strToIntArr(form.getRoleIds(), ",")).toString());
         adminService.save(admin);
 
         return R.success();
@@ -130,14 +130,14 @@ public class AdminController
         }
 
         // 验证角色（不允许添加超管，超管是默认生成的，唯一）
-        Boolean res = roleService.checkRole(form.getRole_ids());
+        Boolean res = roleService.checkRole(form.getRoleIds());
         if (res.equals(false)) {
             return R.error();
         }
 
         Admin admin = new Admin();
         BeanUtils.copyProperties(form, admin);
-        admin.setRole(JSONUtil.parse(Function.strToIntArr(form.getRole_ids(), ",")).toString());
+        admin.setRole(JSONUtil.parse(Function.strToIntArr(form.getRoleIds(), ",")).toString());
         admin.setUsername(null);
 
         if (form.getPassword().length() > 0) {
@@ -172,6 +172,7 @@ public class AdminController
         if (StpUtil.getLoginIdAsInt() == adminId) {
             return R.error();
         }
+
         // 不允许删除超管
         HashMap where = new HashMap<>();
         where.put("id", adminId);

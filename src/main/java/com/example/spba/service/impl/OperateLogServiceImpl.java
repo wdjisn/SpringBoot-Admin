@@ -20,10 +20,10 @@ public class OperateLogServiceImpl extends ServiceImpl<OperateLogMapper, Operate
     private AdminService adminService;
 
     @Override
-    public void save(Long admin_id, String url, String method, String params, String ip) {
-        Admin admin = adminService.getById(admin_id);
+    public void save(Long adminId, String url, String method, String params, String ip) {
+        Admin admin = adminService.getById(adminId);
         OperateLog log = new OperateLog();
-        log.setAdmin_id(admin_id.intValue());
+        log.setAdminId(adminId.intValue());
         log.setUsername(admin.getUsername());
         log.setUrl(url);
         log.setMethod(method);

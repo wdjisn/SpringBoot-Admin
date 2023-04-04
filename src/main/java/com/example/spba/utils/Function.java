@@ -119,7 +119,7 @@ public class Function
         List<Object> list = new ArrayList<>();
         for (Object item: data) {
             Map entry = JSONObject.parseObject(JSONObject.toJSONString(item), Map.class);
-            if (Integer.parseInt(entry.get("parent_id").toString()) == pid) {
+            if (Integer.parseInt(entry.get("parentId").toString()) == pid) {
                 List children = getTree(data, Integer.parseInt(entry.get("id").toString()));
                 entry.put("children",children);
                 list.add(entry);

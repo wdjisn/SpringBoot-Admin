@@ -17,7 +17,7 @@ public interface ErrorLogService extends IService<ErrorLog>
      * @param message
      * @param exception
      */
-    void save(String url, String method, String params, String message, String exception);
+    public void save(String url, String method, String params, String message, String exception);
 
     /**
      * 获取错误日志列表（分页）
@@ -25,5 +25,5 @@ public interface ErrorLogService extends IService<ErrorLog>
      * @param params
      * @return
      */
-    Page<HashMap> getList(Page page, HashMap params);
+    public Page<HashMap> getList(Page page, HashMap params);
 }

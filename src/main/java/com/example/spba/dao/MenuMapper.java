@@ -10,5 +10,5 @@ import java.util.List;
 @Mapper
 public interface MenuMapper extends BaseMapper<Menu>
 {
-    List<HashMap> getAll(HashMap params);
+    public List<HashMap> getAll(HashMap params);
 }

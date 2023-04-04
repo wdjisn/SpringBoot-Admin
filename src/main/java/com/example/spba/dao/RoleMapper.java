@@ -12,6 +12,6 @@ import java.util.List;
 @Mapper
 public interface RoleMapper extends BaseMapper<Role>
 {
-    List<Role> getAll(HashMap params);
-    Page<HashMap> getList(Page page, @Param("params") HashMap params);
+    public List<Role> getAll(HashMap params);
+    public Page<HashMap> getList(Page page, @Param("params") HashMap params);
 }

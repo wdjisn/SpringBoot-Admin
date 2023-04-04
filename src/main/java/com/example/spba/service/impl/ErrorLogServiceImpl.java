@@ -22,7 +22,6 @@ public class ErrorLogServiceImpl extends ServiceImpl<ErrorLogMapper, ErrorLog> i
         error.setMessage(message);
         error.setException(exception);
         this.save(error);
-        // TODO::发送钉钉告警推送
     }
 
     @Override

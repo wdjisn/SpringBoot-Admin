@@ -20,7 +20,7 @@ public class AdminDTO
     private String password;
 
     @NotBlank(message = "请选择角色", groups = {Save.class, Update.class})
-    private String role_ids;
+    private String roleIds;
 
     private Integer status;
 

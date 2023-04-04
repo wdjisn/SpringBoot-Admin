@@ -13,26 +13,26 @@ public interface EsBlogService
      * 统计数量
      * @return
      */
-    long count();
+    public long count();
 
     /**
      * 保存
      * @param blog
      * @return
      */
-    EsBlog save(EsBlog blog);
+    public EsBlog save(EsBlog blog);
 
     /**
      * 查询所有
      * @return
      */
-    Iterable<EsBlog> findAll();
+    public Iterable<EsBlog> findAll();
 
     /**
      * 查询所有（排序）
      * @return
      */
-    Iterable<EsBlog> findAllSort(String sort);
+    public Iterable<EsBlog> findAllSort(String sort);
 
     /**
      * 分页查询
@@ -41,20 +41,20 @@ public interface EsBlogService
      * @param size 每页数量
      * @return
      */
-    HashMap<String, Object> findList(String keywords, Integer page, Integer size);
+    public HashMap<String, Object> findList(String keywords, Integer page, Integer size);
 
     /**
      * 根据id删除
      * @param id
      */
-    void deleteById(Long id);
+    public void deleteById(Long id);
 
     /**
      * 根据title查询
      * @param title
      * @return
      */
-    List<EsBlog> findByTitle(String title);
+    public List<EsBlog> findByTitle(String title);
 
     /**
      * 根据title或content查询
@@ -62,5 +62,5 @@ public interface EsBlogService
      * @param content
      * @return
      */
-    List<EsBlog> findByTitleOrContent(String title, String content);
+    public List<EsBlog> findByTitleOrContent(String title, String content);
 }

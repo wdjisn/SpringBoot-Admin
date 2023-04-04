@@ -65,7 +65,7 @@ public class RoleController
         Role info = roleService.getById(roleId);
         if (info != null) {
             data = JSONUtil.parse(info).toBean(HashMap.class);
-            data.put("menu_ids", JSONUtil.parse(info.getPermission()).toBean(List.class));
+            data.put("menuIds", JSONUtil.parse(info.getPermission()).toBean(List.class));
             data.remove("root");
             data.remove("permission");
         }
@@ -83,7 +83,7 @@ public class RoleController
     {
         Role role = new Role();
         BeanUtils.copyProperties(form, role);
-        role.setPermission(JSONUtil.parse(Function.strToIntArr(form.getMenu_ids(), ",")).toString());
+        role.setPermission(JSONUtil.parse(Function.strToIntArr(form.getMenuIds(), ",")).toString());
         roleService.save(role);
 
         return R.success();
@@ -105,7 +105,7 @@ public class RoleController
 
         Role role = new Role();
         BeanUtils.copyProperties(form, role);
-        role.setPermission(JSONUtil.parse(Function.strToIntArr(form.getMenu_ids(), ",")).toString());
+        role.setPermission(JSONUtil.parse(Function.strToIntArr(form.getMenuIds(), ",")).toString());
         roleService.updateById(role);
 
         // 停用角色，将与本角色相关的所有管理员强制注销下线

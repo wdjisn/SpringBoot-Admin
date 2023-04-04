@@ -14,12 +14,12 @@ public interface MenuService  extends IService<Menu>
      * @param params
      * @return
      */
-    List<HashMap> getAll(HashMap params);
+    public List<HashMap> getAll(HashMap params);
 
     /**
      * 检测参数
      * @param menu
      * @return
      */
-    HashMap checkParams(Menu menu);
+    public HashMap checkParams(Menu menu);
 }

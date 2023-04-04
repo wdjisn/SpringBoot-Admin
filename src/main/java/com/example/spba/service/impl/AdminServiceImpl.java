@@ -134,13 +134,13 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     {
         Admin update = new Admin();
         update.setId(id);
-        update.setLogin_ip(ip);
-        update.setLogin_time(new Date());
+        update.setLoginIp(ip);
+        update.setLoginTime(new Date());
         this.baseMapper.updateById(update);
 
         LoginLog log = new LoginLog();
-        log.setAdmin_id(Integer.valueOf(id.toString()));
-        log.setLogin_ip(ip);
+        log.setAdminId(Integer.valueOf(id.toString()));
+        log.setLoginIp(ip);
         loginLogService.save(log);
     }
 }
