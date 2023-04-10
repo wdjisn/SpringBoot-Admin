@@ -9,6 +9,8 @@
 
 ![菜单管理](./src/main/resources/static/image/menu.png)
 
+![错误日志](./src/main/resources/static/image/error.png)
+
 ![七牛云上传视频](./src/main/resources/static/image/upload.png)
 
 
